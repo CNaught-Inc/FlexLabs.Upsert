@@ -1,0 +1,36 @@
+on:
+  workflow_dispatch:
+    inputs:
+      major:
+        description: 'Major version of the package to publish'
+        type: string
+        required: true
+        default: '7'
+      minor:
+        description: 'Minor version of the package to publish'
+        type: string
+        required: true
+        default: '0'
+      patch:
+        description: 'Patch version of the package to publish'
+        type: string
+        required: true
+        default: '0'
+
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Pack and publish
+        env:
+          VERSION: ${{ inputs.major }}.${{ inputs.minor }}.${{ inputs.patch }}
+        run: |
+          dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/CNaught-Inc/index.json"
+          dotnet pack --configuration Release
+          dotnet nuget push "bin/Release/FlexLabs.Upsert.$VERSION.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+
