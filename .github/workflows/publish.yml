@@ -39,5 +39,5 @@ jobs:
         run: |
           dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/CNaught-Inc/index.json"
           dotnet pack --configuration Release
-          dotnet nuget push "/home/runner/work/FlexLabs.Upsert/FlexLabs.Upsert/src/FlexLabs.EntityFrameworkCore.Upsert/bin/Release/FlexLabs.Upsert.$VERSION.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+          dotnet nuget push "src/FlexLabs.EntityFrameworkCore.Upsert/bin/Release/FlexLabs.EntityFrameworkCore.Upsert.$VERSION.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
 
