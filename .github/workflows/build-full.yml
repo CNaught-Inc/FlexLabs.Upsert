@@ -39,9 +39,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore /p:CORE_ONLY=true /p:V6_ONLY=true
+      run: dotnet build --no-restore /p:CORE_ONLY=true
     - name: Test
-      run: dotnet test --no-build /p:V6_ONLY=true
+      run: dotnet test --no-build
 
   build-windows:
     runs-on: windows-latest
@@ -58,6 +58,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore /p:POSTGRES_ONLY=true /p:V6_ONLY=true
+      run: dotnet build --no-restore /p:POSTGRES_ONLY=true
     - name: Test
-      run: dotnet test --no-build /p:V6_ONLY=true
+      run: dotnet test --no-build

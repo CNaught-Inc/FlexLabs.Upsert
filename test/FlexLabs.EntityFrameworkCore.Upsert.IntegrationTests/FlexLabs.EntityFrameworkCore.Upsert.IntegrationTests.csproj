@@ -11,10 +11,6 @@
     <DefineConstants>$(DefineConstants);NOMSSQL;NOMYSQL;POSTGRES_ONLY</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(V6_ONLY)'!=''">
-    <TargetFrameworks>net6.0</TargetFrameworks>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.0-rc.2.22472.11" />

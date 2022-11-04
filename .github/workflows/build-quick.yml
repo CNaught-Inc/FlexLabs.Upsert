@@ -14,6 +14,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore /p:CORE_ONLY=true /p:V6_ONLY=true
+      run: dotnet build --no-restore /p:CORE_ONLY=true
     - name: Test
-      run: dotnet test ./test/FlexLabs.EntityFrameworkCore.Upsert.Tests --no-build /p:V6_ONLY=true
+      run: dotnet test ./test/FlexLabs.EntityFrameworkCore.Upsert.Tests --no-build
