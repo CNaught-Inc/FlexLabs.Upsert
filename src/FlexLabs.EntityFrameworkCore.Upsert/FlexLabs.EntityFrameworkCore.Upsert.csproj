@@ -16,11 +16,11 @@ Uses `INSERT … ON CONFLICT DO UPDATE` in PostgreSQL/Sqlite, `MERGE` in SqlServ
 
 Also supports injecting sql command generators to add support for other providers</Description>
     <Copyright>Artiom Chilaru © 2019</Copyright>
-    <PackageProjectUrl>https://github.com/artiomchi/FlexLabs.Upsert</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/artiomchi/FlexLabs.Upsert</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/CNaught-Inc/FlexLabs.Upsert</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/CNaught-Inc/FlexLabs.Upsert</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>Entity Framework Core entity-framework-core EF EntityFramework EntityFrameworkCore EFCore Upsert</PackageTags>
-    <VersionPrefix>6.0.1</VersionPrefix>
+    <VersionPrefix>7.0.0</VersionPrefix>
     <PackageReleaseNotes>
 v6.0.0
 + Adding support for EF Core 6
@@ -45,10 +45,6 @@ v4.0.0
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\..\certs\FlexLabsStrongKey.snk</AssemblyOriginatorKeyFile>
-    <SignCertificateName>Artiom Chilaru</SignCertificateName>
-    <PostBuildEvent>signtool.exe sign /n "$(SignCertificateName)" /fd sha256 /tr "http://timestamp.digicert.com" /td sha256 FlexLabs.EntityFrameworkCore.Upsert.dll</PostBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
